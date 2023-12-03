@@ -3,4 +3,4 @@
 Simple template for Minecraft Bedrock, to make a chest like the vanilla chest, with animation!
 
 <h2>How to use?</h2>
-<p>Here u can see how to use: <a href="https://youtu.be/Xev6MGTLVDU">Video</a></p>
+<a href="https://youtu.be/Xev6MGTLVDU">>There's a video here, click me!</a>
