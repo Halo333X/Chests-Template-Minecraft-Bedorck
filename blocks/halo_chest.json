@@ -1,0 +1,383 @@
+{
+	"format_version": "1.20.20",
+	"minecraft:block": {
+		"description": {
+			"menu_category": {
+				"category": "items",
+				"group": "itemGroup.name.chest"
+			},
+			"identifier": "halo:chest_block",
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": [
+						"minecraft:cardinal_direction"
+					],
+					"y_rotation_offset": 180
+				}
+			},
+			"states": {
+				"halo:open_anim": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8,
+					9,
+					10,
+					11
+				]
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_state('halo:open_anim') == 0",
+				"components": {
+					"tag:chest0": {},
+					"minecraft:geometry": "geometry.halo_chest"
+				}
+			},
+			{
+				"condition": "query.block_state('halo:open_anim') == 1",
+				"components": {
+					"tag:chest1": {},
+					"minecraft:geometry": "geometry.halo_chest1",
+					"minecraft:queued_ticking": {
+						"interval_range": [
+							1,
+							1
+						],
+						"looping": false,
+						"on_tick": {
+							"event": "halo:open_anim"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('halo:open_anim') == 2",
+				"components": {
+					"tag:chest2": {},
+					"minecraft:geometry": "geometry.halo_chest2",
+					"minecraft:queued_ticking": {
+						"interval_range": [
+							1,
+							1
+						],
+						"looping": false,
+						"on_tick": {
+							"event": "halo:open_anim"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('halo:open_anim') == 3",
+				"components": {
+					"tag:chest3": {},
+					"minecraft:geometry": "geometry.halo_chest3",
+					"minecraft:queued_ticking": {
+						"interval_range": [
+							1,
+							1
+						],
+						"looping": false,
+						"on_tick": {
+							"event": "halo:open_anim"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('halo:open_anim') == 4",
+				"components": {
+					"tag:chest4": {},
+					"minecraft:geometry": "geometry.halo_chest4",
+					"minecraft:queued_ticking": {
+						"interval_range": [
+							1,
+							1
+						],
+						"looping": false,
+						"on_tick": {
+							"event": "halo:open_anim"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('halo:open_anim') == 5",
+				"components": {
+					"tag:chest5": {},
+					"minecraft:geometry": "geometry.halo_chest5",
+					"minecraft:queued_ticking": {
+						"interval_range": [
+							1,
+							1
+						],
+						"looping": false,
+						"on_tick": {
+							"event": "halo:open_anim"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_state('halo:open_anim') == 6",
+				"components": {
+					"tag:chest6": {},
+					"minecraft:geometry": "geometry.halo_chest6"
+				}
+			},
+			{
+				"condition": "query.block_state('halo:open_anim') == 7",
+				"components": {
+					"tag:chest7": {},
+					"minecraft:queued_ticking": {
+						"interval_range": [
+							1,
+							1
+						],
+						"looping": false,
+						"on_tick": {
+							"event": "halo:open_anim"
+						}
+					},
+					"minecraft:geometry": "geometry.halo_chest5"
+				}
+			},
+			{
+				"condition": "query.block_state('halo:open_anim') == 8",
+				"components": {
+					"tag:chest8": {},
+					"minecraft:queued_ticking": {
+						"interval_range": [
+							1,
+							1
+						],
+						"looping": false,
+						"on_tick": {
+							"event": "halo:open_anim"
+						}
+					},
+					"minecraft:geometry": "geometry.halo_chest4"
+				}
+			},
+			{
+				"condition": "query.block_state('halo:open_anim') == 9",
+				"components": {
+					"tag:chest9": {},
+					"minecraft:queued_ticking": {
+						"interval_range": [
+							1,
+							1
+						],
+						"looping": false,
+						"on_tick": {
+							"event": "halo:open_anim"
+						}
+					},
+					"minecraft:geometry": "geometry.halo_chest3"
+				}
+			},
+			{
+				"condition": "query.block_state('halo:open_anim') == 10",
+				"components": {
+					"tag:chest10": {},
+					"minecraft:queued_ticking": {
+						"interval_range": [
+							1,
+							1
+						],
+						"looping": false,
+						"on_tick": {
+							"event": "halo:open_anim"
+						}
+					},
+					"minecraft:geometry": "geometry.halo_chest2"
+				}
+			},
+			{
+				"condition": "query.block_state('halo:open_anim') == 11",
+				"components": {
+					"tag:chest11": {},
+					"minecraft:queued_ticking": {
+						"interval_range": [
+							1,
+							1
+						],
+						"looping": false,
+						"on_tick": {
+							"event": "halo:open_anim"
+						}
+					},
+					"minecraft:geometry": "geometry.halo_chest1"
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							0,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							90,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							180,
+							0
+						]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [
+							0,
+							-90,
+							0
+						]
+					}
+				}
+			}
+		],
+		"components": {
+			"tag:halo:chest": {},
+			"tag:wood": {},
+			"tag:chest": {},
+			"tag:planks": {},
+			"tag:log": {},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "halo_chest",
+					"ambient_occlusion": true,
+					"face_dimming": true,
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 5
+			}
+		},
+		"events": {
+			"halo:open_anim": {
+				"sequence": [
+					{
+						"condition": "query.block_neighbor_has_any_tag(0,0,0,'chest0')",
+						"set_block_state": {
+							"halo:open_anim": 1
+						},
+						"run_command": {
+							"command": [
+								"playsound random.chestopen @a[r=5]"
+							]
+						}
+					},
+					{
+						"condition": "query.block_neighbor_has_any_tag(0,0,0,'chest1')",
+						"set_block_state": {
+							"halo:open_anim": 2
+						}
+					},
+					{
+						"condition": "query.block_neighbor_has_any_tag(0,0,0,'chest2')",
+						"set_block_state": {
+							"halo:open_anim": 3
+						}
+					},
+					{
+						"condition": "query.block_neighbor_has_any_tag(0,0,0,'chest3')",
+						"set_block_state": {
+							"halo:open_anim": 4
+						}
+					},
+					{
+						"condition": "query.block_neighbor_has_any_tag(0,0,0,'chest4')",
+						"set_block_state": {
+							"halo:open_anim": 5
+						}
+					},
+					{
+						"condition": "query.block_neighbor_has_any_tag(0,0,0,'chest5')",
+						"set_block_state": {
+							"halo:open_anim": 6
+						}
+					},
+					{
+						"condition": "query.block_neighbor_has_any_tag(0,0,0,'chest6')",
+						"set_block_state": {
+							"halo:open_anim": 7
+						},
+						"run_command": {
+							"command": [
+								"playsound random.chestclosed @a[r=5]"
+							]
+						}
+					},
+					{
+						"condition": "query.block_neighbor_has_any_tag(0,0,0,'chest7')",
+						"set_block_state": {
+							"halo:open_anim": 8
+						}
+					},
+					{
+						"condition": "query.block_neighbor_has_any_tag(0,0,0,'chest8')",
+						"set_block_state": {
+							"halo:open_anim": 9
+						}
+					},
+					{
+						"condition": "query.block_neighbor_has_any_tag(0,0,0,'chest9')",
+						"set_block_state": {
+							"halo:open_anim": 10
+						}
+					},
+					{
+						"condition": "query.block_neighbor_has_any_tag(0,0,0,'chest10')",
+						"set_block_state": {
+							"halo:open_anim": 11
+						}
+					},
+					{
+						"condition": "query.block_neighbor_has_any_tag(0,0,0,'chest11')",
+						"set_block_state": {
+							"halo:open_anim": 0
+						}
+					}
+				]
+			},
+			"halo:chest": {
+				"run_command": {
+					"command": [
+						"summon halo:halo_chest ~ ~-0.3 ~ ~ ~"
+					]
+				}
+			}
+		}
+	}
+}

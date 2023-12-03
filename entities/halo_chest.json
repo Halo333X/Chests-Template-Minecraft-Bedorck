@@ -1,0 +1,123 @@
+{
+	"format_version": "1.19.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "halo:chest_entity",
+			"is_summonable": true,
+			"is_spawnable": false,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"halo:no_container": {
+				"minecraft:entity_sensor": {
+					"sensor_range": 7,
+					"event_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							{
+								"test": "has_container_open",
+								"subject": "other",
+								"value": false
+							}
+						]
+					},
+					"event": "halo:no_container"
+				}
+			},
+			"halo:container": {
+				"minecraft:entity_sensor": {
+					"sensor_range": 7,
+					"event_filters": {
+						"all_of": [
+							{
+								"test": "is_family",
+								"subject": "other",
+								"value": "player"
+							},
+							{
+								"test": "has_container_open",
+								"subject": "other",
+								"value": true
+							}
+						]
+					},
+					"event": "halo:container"
+				}
+			}
+		},
+		"components": {
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:collision_box": {
+				"height": 0.9,
+				"width": 1
+			},
+			"minecraft:health": {
+				"value": 1
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {},
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:inventory": {
+				"additional_slots_per_strength": 0,
+				"container_type": "container",
+				"inventory_size": 27
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"halo:container"
+					]
+				}
+			},
+			"halo:container": {
+				"run_command": {
+					"command": [
+						"playsound random.chestopen @a[r=5]",
+						"tag @s[tag=!container_open] add container_open"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"halo:container"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"halo:no_container"
+					]
+				}
+			},
+			"halo:no_container": {
+				"run_command": {
+					"command": [
+						"playsound random.chestclosed @a[r=5]",
+						"tag @s[tag=container_open] remove container_open"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"halo:no_container"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"halo:container"
+					]
+				}
+			}
+		}
+	}
+}
